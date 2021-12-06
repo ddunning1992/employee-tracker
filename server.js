@@ -11,6 +11,7 @@ const displayRoles = require('./lib/displayRoles.js');
 const displayEmployees = require('./lib/displayEmployees.js');
 const addRole = require('./lib/addRole.js');
 const addEmployee = require('./lib/addEmployee.js');
+const updateRole = require('./lib/updateRole');
 
 //if connection succeeds, begins executing script
 db.connect(err => {
