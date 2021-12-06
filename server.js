@@ -3,7 +3,10 @@ const mysql = require('mysql2');
 //import inquirer
 const inquirer = require('inquirer');
 
-const db = require()
+//import functions
+const db = require('./db/connection.js')
+const displayDepartments = require('./lib/displayDepartments.js');
+const addDepartment = require('./lib/addDepartment.js');
 
 //if connection succeeds, begins executing script
 db.connect(err => {
@@ -13,13 +16,13 @@ db.connect(err => {
     promptUser();
 });
 
-const promptUser = () => {
+promptUser = () => {
     inquirer.prompt([
         {
             type: 'list',
             name: 'choices',
             message: 'What would you like to do?',
-            choicces: [
+            choices: [
                 'View all departments',
                 'View all roles',
                 'View all employees',
@@ -31,27 +34,27 @@ const promptUser = () => {
         }
     ])
     .then((answers) => {
-        const { choice } = answers;
+        const { choices } = answers;
 
-        if (choice === 'View all departments') {
+        if (choices === 'View all departments') {
             displayDepartments();
         }
-        if (choice === 'View all roles') {
+        if (choices === 'View all roles') {
             displayRoles();
         }
-        if (choice === 'View all employees') {
+        if (choices === 'View all employees') {
             displayEmployees();
         }
-        if (choice === 'Add a department') {
+        if (choices === 'Add a department') {
             addDepartment();
         }
-        if (choice === 'Add a role') {
+        if (choices === 'Add a role') {
             addRole();
         }
-        if (choice === 'Add an employee') {
+        if (choices === 'Add an employee') {
             addEmployee();
         }
-        if (choice === 'Update an employee role') {
+        if (choices === 'Update an employee role') {
             updateRole();
         };
     });

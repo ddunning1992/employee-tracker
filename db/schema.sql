@@ -9,7 +9,7 @@ CREATE TABLE department (
 
 CREATE TABLE role (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    position VARCHAR(20) NOT NULL,
+    position VARCHAR(30) NOT NULL,
     pay DECIMAL NOT NULL,
     department_id INTEGER,
     INDEX dep_ind (department_id),
@@ -20,7 +20,7 @@ CREATE TABLE employee (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INTEGER,
+    role_id INTEGER, 
     INDEX role_ind (role_id),
     CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL,
     manager_id INTEGER,
