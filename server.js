@@ -7,6 +7,10 @@ const inquirer = require('inquirer');
 const db = require('./db/connection.js')
 const displayDepartments = require('./lib/displayDepartments.js');
 const addDepartment = require('./lib/addDepartment.js');
+const displayRoles = require('./lib/displayRoles.js');
+const displayEmployees = require('./lib/displayEmployees.js');
+const addRole = require('./lib/addRole.js');
+const addEmployee = require('./lib/addEmployee.js');
 
 //if connection succeeds, begins executing script
 db.connect(err => {
