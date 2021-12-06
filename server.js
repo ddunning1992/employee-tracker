@@ -1,9 +1,9 @@
-//import mysql2
-const mysql = require('mysql2');
 //import inquirer
 const inquirer = require('inquirer');
+//import console.table
+const cTable = require('console.table');
 
-//import functions
+//import functions from modules
 const db = require('./db/connection.js')
 const displayDepartments = require('./lib/displayDepartments.js');
 const addDepartment = require('./lib/addDepartment.js');
